@@ -6,6 +6,7 @@ import {
   useMotionValue,
   useTransform,
   animate,
+  type Variants,
 } from 'framer-motion'
 import { ArrowRight, Shield, MapPin, Clock } from 'lucide-react'
 import { cn } from '@/utils'
@@ -136,22 +137,22 @@ function AnimatedCounter({ value, display, suffix, suffixClass, inView }: Counte
 const EASE   = [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
 const EASE_X = [0.16, 1.00, 0.30, 1.00] as [number, number, number, number]
 
-const stagger = (delay = 0.05, children = 0.09) => ({
+const stagger = (delay = 0.05, children = 0.09): Variants => ({
   hidden:  {},
   visible: { transition: { staggerChildren: children, delayChildren: delay } },
 })
 
-const fadeUp: { hidden: object; visible: object } = {
+const fadeUp: Variants = {
   hidden:  { opacity: 0, y: 26 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.64, ease: EASE } },
 }
 
-const fadeRight: { hidden: object; visible: object } = {
+const fadeRight: Variants = {
   hidden:  { opacity: 0, x: 28 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.60, ease: EASE } },
 }
 
-const statCard: { hidden: object; visible: object } = {
+const statCard: Variants = {
   hidden:  { opacity: 0, y: 22 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.60, ease: EASE_X } },
 }
