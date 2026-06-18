@@ -139,8 +139,11 @@ export default {
           700:  '#B45309',
         },
         error: {
+          DEFAULT: '#EF4444',
           50:   '#FEF2F2',
+          100:  '#FEE2E2',
           500:  '#EF4444',
+          600:  '#DC2626',
           700:  '#B91C1C',
         },
         info: {

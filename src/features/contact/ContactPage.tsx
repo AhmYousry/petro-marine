@@ -1,17 +1,34 @@
+import { ContactHero }     from './components/ContactHero'
+import { ContactInfo }     from './components/ContactInfo'
+import { ContactForm }     from './components/ContactForm'
+import { MapPlaceholder }  from './components/MapPlaceholder'
+import { QuoteCTA }        from './components/QuoteCTA'
+
 export function ContactPage() {
   return (
-    <div className="pt-[72px]">
-      <div className="bg-navy-900 py-24">
-        <div className="container-maritime">
-          <p className="label-maritime text-steel-400 mb-4">Reach Our Team</p>
-          <h1 className="font-display font-bold text-display-lg text-white">Contact Us</h1>
+    <>
+      <ContactHero />
+
+      {/* Main: contact info (left) + form (right) */}
+      <section className="relative bg-white overflow-hidden" aria-label="Contact details and form">
+        {/* Decorative blob */}
+        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+          <div
+            className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-[0.04]"
+            style={{ background: 'radial-gradient(circle, #2A5FA5 0%, transparent 65%)' }}
+          />
         </div>
-      </div>
-      <div className="section-steel py-24">
-        <div className="container-maritime">
-          <p className="text-steel-400 text-sm">Contact form coming soon…</p>
+
+        <div className="container-maritime py-20 md:py-24 relative">
+          <div className="grid lg:grid-cols-[1fr_1.1fr] xl:grid-cols-[1fr_1.05fr] gap-12 xl:gap-16 items-start">
+            <ContactInfo />
+            <ContactForm />
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <MapPlaceholder />
+      <QuoteCTA />
+    </>
   )
 }
