@@ -1,14 +1,17 @@
 // ─── Application Router ───────────────────────────────────────────────────────
-// Uses React Router v6 createBrowserRouter with data API.
-// All routes are lazy-loaded via feature barrel exports.
+// React Router v6 createBrowserRouter. Page components are code-split with
+// React.lazy so each route ships as its own chunk (Suspense boundary lives in
+// RootLayout). The initial load only pays for the shell + the first route.
 
+import { lazy } from 'react'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
-import { RootLayout }   from '@shared/layout'
-import { HomePage }     from '@features/home'
-import { AboutPage }    from '@features/about'
-import { ServicesPage } from '@features/services'
-import { ContactPage }  from '@features/contact'
-import { ROUTES }       from '@config/routes'
+import { RootLayout } from '@shared/layout'
+import { ROUTES }     from '@config/routes'
+
+const HomePage     = lazy(() => import('@features/home').then((m)     => ({ default: m.HomePage })))
+const AboutPage    = lazy(() => import('@features/about').then((m)    => ({ default: m.AboutPage })))
+const ServicesPage = lazy(() => import('@features/services').then((m) => ({ default: m.ServicesPage })))
+const ContactPage  = lazy(() => import('@features/contact').then((m)  => ({ default: m.ContactPage })))
 
 export const router = createBrowserRouter([
   {

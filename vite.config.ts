@@ -19,4 +19,26 @@ export default defineConfig({
       '@styles': path.resolve(__dirname, './src/styles'),
     },
   },
+  build: {
+    // Split large, rarely-changing vendor libs into their own long-cache chunks
+    // so app updates don't force re-downloading React / Framer Motion.
+    // (Rolldown-vite types manualChunks as a function — order matters so that
+    // lucide-react isn't swept into the react chunk by a loose substring match.)
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (!id.includes('node_modules')) return
+          if (id.includes('framer-motion')) return 'motion-vendor'
+          if (id.includes('lucide-react'))  return 'icons-vendor'
+          if (
+            id.includes('react-router') ||
+            id.includes('/react-dom/') ||
+            id.includes('/react/') ||
+            id.includes('/scheduler/')
+          ) return 'react-vendor'
+        },
+      },
+    },
+    chunkSizeWarningLimit: 700,
+  },
 })
