@@ -31,17 +31,6 @@ interface Slide {
 
 const SLIDES: Slide[] = [
   {
-    id:           'heritage',
-    eyebrow:      'TRUSTED SINCE 1998',
-    headline:     ['Over 50 Years', 'Serving the Sea'],
-    body:         'Setting the gold standard in offshore operations, vessel management, and maritime solutions across global waters — for over five decades.',
-    cta:          { label: 'Explore Our Services', href: ROUTES.SERVICES },
-    ctaSecondary: { label: 'Our Story',            href: ROUTES.ABOUT },
-    accentWord:   'Serving',
-    accentColor:  'text-ocean-300',
-    badge:        '25+ Years of Excellence',
-  },
-  {
     id:           'solutions',
     eyebrow:      'FULL-SERVICE CAPABILITY',
     headline:     ['Complete Marine', 'Solutions,', 'One Partner'],
@@ -63,6 +52,17 @@ const SLIDES: Slide[] = [
     accentColor:  'text-gold-400',
     badge:        '40+ Ports Worldwide',
   },
+  {
+    id:           'heritage',
+    eyebrow:      'TRUSTED SINCE 1998',
+    headline:     ['Over 50 Years', 'Serving the Sea'],
+    body:         'Setting the gold standard in offshore operations, vessel management, and maritime solutions across global waters — for over five decades.',
+    cta:          { label: 'Explore Our Services', href: ROUTES.SERVICES },
+    ctaSecondary: { label: 'Our Story',            href: ROUTES.ABOUT },
+    accentWord:   'Serving',
+    accentColor:  'text-ocean-300',
+    badge:        '25+ Years of Excellence',
+  },
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -70,23 +70,23 @@ const SLIDES: Slide[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 const SLIDE_BACKGROUNDS = [
-  // Slide 1 — deep midnight navy, radial ocean sweep from top
-  {
-    base:    'linear-gradient(160deg, #070E1E 0%, #0F1E3A 30%, #1B2B4B 65%, #1B3E6F 100%)',
-    overlay: 'radial-gradient(ellipse 90% 55% at 50% -5%, rgba(42,95,165,0.55) 0%, transparent 58%)',
-  },
-  // Slide 2 — ocean blue, strong left-column sweep, more visible depth
+  // Slide 1 — solutions — ocean blue, strong left-column sweep, more visible depth
   {
     base:    'linear-gradient(150deg, #0A1525 0%, #122444 30%, #1A3260 60%, #1F4880 100%)',
     overlay: 'radial-gradient(ellipse 70% 90% at -8% 50%, rgba(42,95,165,0.55) 0%, transparent 55%)',
   },
-  // Slide 3 — deep night with ember glow, warm bottom-right accent
+  // Slide 2 — support — deep night with ember glow, warm bottom-right accent
   {
     base:    'linear-gradient(135deg, #070E1E 0%, #0D1628 35%, #182440 65%, #1B2B4B 100%)',
     overlay: [
       'radial-gradient(ellipse 65% 45% at 100% 100%, rgba(232,82,10,0.24) 0%, transparent 52%)',
       'radial-gradient(ellipse 55% 55% at 55% 108%, rgba(42,95,165,0.32) 0%, transparent 55%)',
     ].join(', '),
+  },
+  // Slide 3 — heritage — deep midnight navy, radial ocean sweep from top
+  {
+    base:    'linear-gradient(160deg, #070E1E 0%, #0F1E3A 30%, #1B2B4B 65%, #1B3E6F 100%)',
+    overlay: 'radial-gradient(ellipse 90% 55% at 50% -5%, rgba(42,95,165,0.55) 0%, transparent 58%)',
   },
 ]
 
@@ -161,7 +161,7 @@ function RadarDecor({ className }: { className?: string }) {
   )
 }
 
-const SLIDE_DECORATIVES = [AnchorDecor, CompassDecor, RadarDecor]
+const SLIDE_DECORATIVES = [CompassDecor, RadarDecor, AnchorDecor]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // FRAMER MOTION VARIANTS  (timing tuned for snappy transitions)
