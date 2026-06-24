@@ -164,14 +164,6 @@ export function ExperienceTimeline() {
           animate={inView ? 'visible' : 'hidden'}
           className="text-center max-w-[680px] mx-auto mb-16 md:mb-20"
         >
-          <div className="mb-5 inline-flex items-center gap-3">
-            <span className="w-8 h-px bg-flame-500" />
-            <span className="text-[0.6875rem] font-display font-semibold uppercase tracking-[0.20em] text-ocean-600">
-              Our Heritage
-            </span>
-            <span className="w-8 h-px bg-flame-500" />
-          </div>
-
           <h2
             id="timeline-heading"
             className={cn(

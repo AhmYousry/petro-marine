@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView, type Variants } from 'framer-motion'
-import { ChevronRight, Home as HomeIcon, Anchor } from 'lucide-react'
+import { ChevronRight, Home as HomeIcon } from 'lucide-react'
 import { cn } from '@/utils'
 import { ROUTES } from '@config/routes'
 
@@ -139,7 +139,7 @@ export function CompanyStory() {
       <section
         ref={narrativeRef}
         className="relative bg-white overflow-hidden"
-        aria-labelledby="company-story-heading"
+        aria-label="Our Story"
       >
         {/* Decorative blobs */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -154,9 +154,9 @@ export function CompanyStory() {
             variants={container}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
-            className="grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] gap-14 xl:gap-20 items-start"
+            className="max-w-[760px]"
           >
-            {/* Left: narrative */}
+            {/* Narrative */}
             <div>
               <motion.div variants={item} className="mb-5 flex items-center gap-3">
                 <span className="w-8 h-px bg-flame-500" />
@@ -164,19 +164,6 @@ export function CompanyStory() {
                   Our Story
                 </span>
               </motion.div>
-
-              <motion.h2
-                id="company-story-heading"
-                variants={item}
-                className={cn(
-                  'font-display font-extrabold text-navy-900',
-                  'leading-[1.08] tracking-[-0.018em]',
-                  'text-[1.875rem] sm:text-[2.375rem] md:text-[2.75rem]',
-                  'mb-8 max-w-[600px]',
-                )}
-              >
-                From the docks of Alexandria to the deck of every ship.
-              </motion.h2>
 
               <motion.p
                 variants={item}
@@ -209,62 +196,6 @@ export function CompanyStory() {
                 We treat every ship like it carries our own family aboard.
               </motion.p>
             </div>
-
-            {/* Right: signature panel */}
-            <motion.aside
-              variants={item}
-              className={cn(
-                'relative rounded-2xl overflow-hidden',
-                'bg-navy-900',
-                'p-9 md:p-10',
-                'shadow-[0_24px_64px_-20px_rgba(7,14,30,0.45)]',
-                'lg:sticky lg:top-28',
-              )}
-            >
-              {/* BG texture */}
-              <div className="absolute inset-0 bg-grid-dark opacity-[0.18]" aria-hidden="true" />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    'radial-gradient(ellipse 90% 60% at 100% 0%, rgba(42,95,165,0.30) 0%, transparent 65%)',
-                }}
-                aria-hidden="true"
-              />
-              {/* Bottom flame line */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-[3px]"
-                style={{ background: 'linear-gradient(to right, transparent, #E8520A, transparent)' }}
-                aria-hidden="true"
-              />
-
-              <div className="relative z-10">
-                {/* Anchor mark */}
-                <div className="w-14 h-14 rounded-xl bg-flame-500/15 ring-1 ring-flame-500/30 flex items-center justify-center mb-6">
-                  <Anchor size={24} strokeWidth={1.5} className="text-flame-400" />
-                </div>
-
-                <p className="text-[0.6875rem] font-display font-semibold uppercase tracking-[0.20em] text-ocean-300 mb-3">
-                  A Word from Our Founder
-                </p>
-
-                <blockquote className="font-display font-medium text-white text-[1.0625rem] leading-[1.6] mb-6 italic">
-                  &ldquo;The sea is the most patient teacher you&rsquo;ll ever meet. It rewards
-                  preparation, punishes shortcuts, and never forgets a lesson. We&rsquo;ve
-                  spent fifty years listening.&rdquo;
-                </blockquote>
-
-                <div className="flex items-center gap-3 pt-5 border-t border-white/10">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-ocean-500 to-navy-800 flex items-center justify-center flex-shrink-0">
-                    <span className="font-display font-bold text-white text-[0.75rem]">PM</span>
-                  </div>
-                  <div className="leading-tight">
-                    <p className="font-display font-bold text-white text-[0.8125rem]">Captain M. El-Sayed</p>
-                    <p className="font-body text-white/55 text-[0.75rem]">Founder &amp; Chairman</p>
-                  </div>
-                </div>
-              </div>
-            </motion.aside>
           </motion.div>
         </div>
       </section>
