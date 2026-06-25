@@ -42,64 +42,6 @@ export const MISSION_VALUES: MissionValue[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// EXPERIENCE TIMELINE
-// ─────────────────────────────────────────────────────────────────────────────
-
-export interface TimelineMilestone {
-  year:   string
-  title:  string
-  body:   string
-  badge?: string
-}
-
-export const TIMELINE: TimelineMilestone[] = [
-  {
-    year:  '1973',
-    title: 'Foundation',
-    body:  'Petromarine is established in Alexandria as a vessel chandling service for international tankers calling at Egypt\'s northern coast.',
-    badge: 'Founded',
-  },
-  {
-    year:  '1981',
-    title: 'Suez Canal Operations',
-    body:  'Expansion into the Suez Canal corridor — opening offices at Port Said and Suez to serve transiting vessels with bunkers and provisions.',
-  },
-  {
-    year:  '1994',
-    title: 'ISO 9001 Certification',
-    body:  'First Egyptian marine services company to achieve ISO 9001 certification, formalizing quality management across all operations.',
-    badge: 'Certified',
-  },
-  {
-    year:  '2002',
-    title: 'Red Sea Expansion',
-    body:  'New offices opened at Hurghada, Safaga, and Ain Sokhna — extending integrated marine services to Egypt\'s booming Red Sea trade.',
-  },
-  {
-    year:  '2010',
-    title: 'Technical Services Division',
-    body:  'Launch of dedicated Ship Repair & Engineering division, with qualified marine engineers serving newbuild commissioning and emergency response.',
-  },
-  {
-    year:  '2017',
-    title: 'MARPOL Compliance Lead',
-    body:  'Investment in dedicated reception barges and onshore separators, establishing Petromarine as the regional leader in MARPOL Annex I & V compliance.',
-    badge: 'Industry Lead',
-  },
-  {
-    year:  '2023',
-    title: 'Digital Operations Hub',
-    body:  'Launch of 24/7 digital operations centre with real-time vessel tracking, automated dispatch, and customer self-service portal.',
-  },
-  {
-    year:  'Today',
-    title: '50+ Years Strong',
-    body:  'Trusted partner to global shipowners, with 12 Egyptian port locations, 10+ specialized services, and a 24/7 operational footprint.',
-    badge: 'Present',
-  },
-]
-
-// ─────────────────────────────────────────────────────────────────────────────
 // STATISTICS
 // ─────────────────────────────────────────────────────────────────────────────
 
