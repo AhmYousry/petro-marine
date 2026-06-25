@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-import { ServicesHero }    from './components/ServicesHero'
-import { ServiceSection }  from './components/ServiceSection'
-import { ServicesCTA }     from './components/ServicesCTA'
+import { ServicesHero }     from './components/ServicesHero'
+import { ServicesOverview } from './components/ServicesOverview'
+import { ServiceSection }   from './components/ServiceSection'
+import { ServicesCTA }      from './components/ServicesCTA'
 import { SERVICES_DETAIL } from './data/services'
 
 export function ServicesPage() {
@@ -18,6 +19,8 @@ export function ServicesPage() {
   return (
     <>
       <ServicesHero />
+
+      <ServicesOverview />
 
       {/* Detailed service sections — alternating zigzag, alternating bg */}
       {SERVICES_DETAIL.map((service, i) => (
