@@ -89,7 +89,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to={ROUTES.HOME} className="inline-block mb-5" aria-label="Petro Marine home">
               <img
-                src="/logo.png"
+                src="/site-logo.png"
                 alt="Petro Marine"
                 className="h-14 w-auto object-contain brightness-0 invert"
                 onError={(e) => { e.currentTarget.style.display = 'none' }}

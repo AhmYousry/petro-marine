@@ -18,7 +18,7 @@ export const BRAND = {
   tagline:     'Marine Services & Solutions',
   description: 'World-class marine services across offshore operations, vessel management, fuel supply, and maritime logistics.',
   founded:     1998,
-  logoPath:    '/logo.png',
+  logoPath:    '/site-logo.png',
 
   contact: {
     email:    'info@petromarine.com',
