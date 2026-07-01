@@ -91,7 +91,7 @@ export function Footer() {
               <img
                 src="/site-logo.png"
                 alt="Petro Marine"
-                className="h-14 w-auto object-contain brightness-0 invert"
+                className="h-20 w-auto object-contain brightness-0 invert"
                 onError={(e) => { e.currentTarget.style.display = 'none' }}
               />
             </Link>
