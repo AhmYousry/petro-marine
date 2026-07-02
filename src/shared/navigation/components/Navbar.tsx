@@ -47,7 +47,7 @@ export function Navbar() {
               src="/site-logo.png"
               alt="Petro Marine"
               className={cn(
-                'h-14 w-auto object-contain transition-[filter] duration-300',
+                'h-28 w-auto object-contain transition-[filter] duration-300',
                 !isScrolled && 'brightness-0 invert',
               )}
               onError={(e) => { e.currentTarget.style.display = 'none' }}
