@@ -1,7 +1,7 @@
 import { motion, type Variants } from 'framer-motion'
-import { MapPin, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import { cn } from '@/utils'
-import { CONTACT_METHODS, OFFICES, HOURS } from '../data/contact'
+import { CONTACT_METHODS, HOURS } from '../data/contact'
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
 
@@ -108,43 +108,6 @@ export function ContactInfo() {
         </div>
       </motion.div>
 
-      {/* ── Regional offices ────────────────────────────────────────── */}
-      <motion.div variants={item}>
-        <h3 className="font-display font-bold text-navy-900 text-[0.9375rem] uppercase tracking-[0.10em] mb-4 flex items-center gap-2.5">
-          <MapPin size={16} strokeWidth={2} className="text-ocean-600" />
-          Our Egyptian Offices
-        </h3>
-        <div className="grid grid-cols-2 gap-3">
-          {OFFICES.map((o) => (
-            <div
-              key={o.id}
-              className={cn(
-                'p-4 rounded-xl border bg-white',
-                o.hub ? 'border-flame-200 ring-1 ring-flame-100' : 'border-steel-100',
-              )}
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <p className="font-display font-bold text-navy-900 text-[0.9375rem]">{o.city}</p>
-                {o.hub && (
-                  <span className="text-[0.5625rem] font-display font-bold uppercase tracking-[0.08em] text-flame-600 bg-flame-50 px-1.5 py-0.5 rounded">
-                    HQ
-                  </span>
-                )}
-              </div>
-              <p className="text-[0.6875rem] font-display font-semibold uppercase tracking-[0.10em] text-ocean-600 mb-2">
-                {o.role}
-              </p>
-              <p className="text-steel-500 font-body text-[0.75rem] leading-[1.5] mb-2">{o.address}</p>
-              <a
-                href={`tel:${o.phone.replace(/[^\d+]/g, '')}`}
-                className="text-navy-800 font-display font-semibold text-[0.75rem] hover:text-flame-600 transition-colors duration-200"
-              >
-                {o.phone}
-              </a>
-            </div>
-          ))}
-        </div>
-      </motion.div>
     </motion.div>
   )
 }

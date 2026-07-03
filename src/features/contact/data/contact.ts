@@ -56,51 +56,6 @@ export const CONTACT_METHODS: ContactMethod[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
-// REGIONAL OFFICES  (Egyptian port presence)
-// ─────────────────────────────────────────────────────────────────────────────
-
-export interface Office {
-  id:      string
-  city:    string
-  role:    string
-  address: string
-  phone:   string
-  hub?:    boolean
-}
-
-export const OFFICES: Office[] = [
-  {
-    id:      'alexandria',
-    city:    'Alexandria',
-    role:    'Head Office',
-    address: 'El-Mina District, Alexandria Port, Egypt',
-    phone:   '+20 3 555 0192',
-    hub:     true,
-  },
-  {
-    id:      'port-said',
-    city:    'Port Said',
-    role:    'Suez Canal North',
-    address: 'Canal Terminal Zone, Port Said, Egypt',
-    phone:   '+20 66 555 0140',
-  },
-  {
-    id:      'suez',
-    city:    'Suez',
-    role:    'Suez Canal South',
-    address: 'Port Tewfik, Suez, Egypt',
-    phone:   '+20 62 555 0177',
-  },
-  {
-    id:      'ain-sokhna',
-    city:    'Ain Sokhna',
-    role:    'Red Sea Gateway',
-    address: 'Sokhna Industrial Port, Suez Governorate, Egypt',
-    phone:   '+20 62 555 0188',
-  },
-]
-
-// ─────────────────────────────────────────────────────────────────────────────
 // OPERATING HOURS
 // ─────────────────────────────────────────────────────────────────────────────
 

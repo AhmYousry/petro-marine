@@ -1,7 +1,6 @@
 import { ContactHero }     from './components/ContactHero'
 import { ContactInfo }     from './components/ContactInfo'
 import { ContactForm }     from './components/ContactForm'
-import { MapPlaceholder }  from './components/MapPlaceholder'
 import { QuoteCTA }        from './components/QuoteCTA'
 
 export function ContactPage() {
@@ -27,7 +26,6 @@ export function ContactPage() {
         </div>
       </section>
 
-      <MapPlaceholder />
       <QuoteCTA />
     </>
   )
