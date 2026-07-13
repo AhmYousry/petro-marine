@@ -15,20 +15,21 @@ import { palette, motion as motionTokens } from './theme'
 export const BRAND = {
   name:        'Petro Marine',
   shortName:   'Petro Marine',
+  legalName:   'Egyptian Cypriot for Marine & Petroleum Services Co. (Petromarine)',
   tagline:     'Marine Services & Solutions',
   description: 'World-class marine services across offshore operations, vessel management, fuel supply, and maritime logistics.',
-  founded:     1998,
+  founded:     1987,
   logoPath:    '/site-logo.png',
 
   contact: {
-    email:    'info@petromarine.com',
-    phone:    '+1 (800) 555-0192',
-    address:  '1 Maritime Plaza, Port District',
-    city:     'Houston',
-    state:    'TX',
-    zip:      '77002',
-    country:  'USA',
-    mapQuery: '1 Maritime Plaza, Houston, TX 77002',
+    email:    'petromarine@petromarine-alex.com',
+    phone:    '+20 3 484 1211',
+    address:  '95, 26th July Avenue',
+    city:     'Azarita',
+    state:    'Alexandria',
+    zip:      '',
+    country:  'Egypt',
+    mapQuery: '95, 26th July Avenue, Azarita, Alexandria, Egypt',
   },
 
   social: {

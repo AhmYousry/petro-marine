@@ -6,20 +6,19 @@ import { ROUTES } from '@/config/routes'
 import { cn } from '@/utils'
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
-const servicesLinks = [
-  { label: 'Offshore Support',       href: ROUTES.SERVICES },
-  { label: 'Vessel Operations',      href: ROUTES.SERVICES },
-  { label: 'Marine Logistics',       href: ROUTES.SERVICES },
-  { label: 'Fuel Supply',            href: ROUTES.SERVICES },
-  { label: 'Technical Consultancy',  href: ROUTES.SERVICES },
+const quickLinks = [
+  { label: 'Home',        href: ROUTES.HOME     },
+  { label: 'About Us',    href: ROUTES.ABOUT    },
+  { label: 'Services',    href: ROUTES.SERVICES },
+  { label: 'Contact Us',  href: ROUTES.CONTACT  },
 ]
 
-const companyLinks = [
-  { label: 'About Us',  href: ROUTES.ABOUT   },
-  { label: 'Services',  href: ROUTES.SERVICES },
-  { label: 'Contact',   href: ROUTES.CONTACT  },
-  { label: 'Careers',   href: '#'             },
-  { label: 'News',      href: '#'             },
+const servicesLinks = [
+  { label: 'Marine Supplies',            href: `${ROUTES.SERVICES}#marine-supply` },
+  { label: 'Provisions & Bonded Stores', href: `${ROUTES.SERVICES}#provisions`    },
+  { label: 'Repair & Maintenance',       href: `${ROUTES.SERVICES}#repair`        },
+  { label: 'Inspection & Calibration',   href: `${ROUTES.SERVICES}#inspection`    },
+  { label: 'Sludge Removal',             href: `${ROUTES.SERVICES}#sludge`        },
 ]
 
 const socialLinks = [
@@ -101,8 +100,8 @@ export function Footer() {
             </p>
 
             <p className="text-sm font-body text-steel-300 leading-relaxed mb-8 max-w-xs">
-              Delivering world-class marine and offshore services to the global
-              energy industry since {BRAND.founded}.
+              {BRAND.legalName} — Your trusted marine partner in Egypt
+              since {BRAND.founded}.
             </p>
 
             {/* Social icons */}
@@ -126,11 +125,11 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 2 — Services ──────────────────────────────────────── */}
+          {/* Col 2 — Quick Links ───────────────────────────────────── */}
           <div>
-            <FooterHeading>Our Services</FooterHeading>
+            <FooterHeading>Quick Links</FooterHeading>
             <ul className="space-y-3">
-              {servicesLinks.map(({ label, href }) => (
+              {quickLinks.map(({ label, href }) => (
                 <li key={label}>
                   <FooterLink href={href}>{label}</FooterLink>
                 </li>
@@ -138,11 +137,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 3 — Company ───────────────────────────────────────── */}
+          {/* Col 3 — Services ──────────────────────────────────────── */}
           <div>
-            <FooterHeading>Company</FooterHeading>
+            <FooterHeading>Our Services</FooterHeading>
             <ul className="space-y-3">
-              {companyLinks.map(({ label, href }) => (
+              {servicesLinks.map(({ label, href }) => (
                 <li key={label}>
                   <FooterLink href={href}>{label}</FooterLink>
                 </li>
@@ -156,7 +155,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href={`https://maps.google.com/?q=${encodeURIComponent(BRAND.contact.address)}`}
+                  href={`https://maps.google.com/?q=${encodeURIComponent(BRAND.contact.mapQuery)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 text-sm font-body text-steel-300 hover:text-white transition-colors duration-200 group"
@@ -227,7 +226,7 @@ export function Footer() {
       <div className="border-t border-steel-700/50">
         <div className="container-maritime py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs font-body text-steel-500 text-center sm:text-left">
-            © {year} {BRAND.name}. All rights reserved.
+            © {year} {BRAND.legalName}. All Rights Reserved.
           </p>
           <div className="flex items-center gap-4">
             {legalLinks.map(({ label, href }, i) => (
