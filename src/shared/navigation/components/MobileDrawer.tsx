@@ -94,9 +94,9 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                 className="flex items-center gap-2"
               >
                 <img
-                  src="/site-logo.png"
+                  src="/logo-mark.png"
                   alt="Petro Marine"
-                  className="h-24 w-auto object-contain brightness-0 invert"
+                  className="h-10 w-auto object-contain"
                   onError={(e) => { e.currentTarget.style.display = 'none' }}
                 />
                 <span className="font-display font-bold text-sm tracking-widest uppercase text-white">

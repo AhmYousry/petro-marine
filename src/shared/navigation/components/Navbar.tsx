@@ -44,12 +44,9 @@ export function Navbar() {
             aria-label="Petro Marine — Home"
           >
             <img
-              src="/site-logo.png"
+              src="/logo-mark.png"
               alt="Petro Marine"
-              className={cn(
-                'h-20 w-auto object-contain transition-[filter] duration-300',
-                !isScrolled && 'brightness-0 invert',
-              )}
+              className="h-12 w-auto object-contain"
               onError={(e) => { e.currentTarget.style.display = 'none' }}
             />
             <div className={cn(

@@ -89,9 +89,9 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to={ROUTES.HOME} className="inline-block mb-5" aria-label="Petro Marine home">
               <img
-                src="/site-logo.png"
+                src="/logo-mark.png"
                 alt="Petro Marine"
-                className="h-40 w-auto object-contain"
+                className="h-24 w-auto object-contain"
                 onError={(e) => { e.currentTarget.style.display = 'none' }}
               />
             </Link>
