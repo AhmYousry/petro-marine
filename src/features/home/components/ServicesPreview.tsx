@@ -9,7 +9,6 @@ import {
   Filter,
   Wrench,
   Gauge,
-  ArrowRight,
   MoveRight,
 } from 'lucide-react'
 import { cn } from '@/utils'
@@ -267,24 +266,9 @@ export function ServicesPreview() {
                 </h3>
 
                 {/* ── Description ───────────────────────────────────── */}
-                <p className="font-body text-steel-500 text-sm leading-[1.68] flex-1 mb-5">
+                <p className="font-body text-steel-500 text-sm leading-[1.68] flex-1">
                   {service.description}
                 </p>
-
-                {/* ── "Learn more" arrow ────────────────────────────── */}
-                <div className={cn(
-                  'flex items-center gap-1.5 mt-auto',
-                  'text-[0.8rem] font-display font-semibold uppercase tracking-[0.10em]',
-                  'text-steel-400 group-hover:text-ocean-600',
-                  'transition-colors duration-250',
-                )}>
-                  <span>Learn more</span>
-                  <ArrowRight
-                    size={12}
-                    strokeWidth={2.5}
-                    className="flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1.5"
-                  />
-                </div>
               </motion.article>
             )
           })}
