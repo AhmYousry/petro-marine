@@ -112,6 +112,7 @@ export const SERVICES_DETAIL: ServiceDetail[] = [
       { label: 'Documentation',     value: 'Full Chain' },
     ],
     imageAccent: 'linear-gradient(135deg, #059669 0%, #115E59 55%, #0D162C 100%)',
+    image:       '/services/garbage.jpg',
     bg:          'smoke',
   },
   {
