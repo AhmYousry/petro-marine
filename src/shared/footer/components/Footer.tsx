@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, ShieldCheck } from 'lucide-react'
-import { LinkedInIcon, TwitterXIcon, YouTubeIcon } from '@ui/primitives/SocialIcons'
 import { BRAND } from '@/config/brand'
 import { ROUTES } from '@/config/routes'
 import { cn } from '@/utils'
@@ -19,12 +18,6 @@ const servicesLinks = [
   { label: 'Repair & Maintenance',       href: `${ROUTES.SERVICES}#repair`        },
   { label: 'Inspection & Calibration',   href: `${ROUTES.SERVICES}#inspection`    },
   { label: 'Sludge Removal',             href: `${ROUTES.SERVICES}#sludge`        },
-]
-
-const socialLinks = [
-  { Icon: LinkedInIcon, label: 'LinkedIn', href: BRAND.social.linkedin },
-  { Icon: TwitterXIcon, label: 'Twitter',  href: BRAND.social.twitter  },
-  { Icon: YouTubeIcon,  label: 'YouTube',  href: '#'                   },
 ]
 
 const legalLinks = [
@@ -99,30 +92,10 @@ export function Footer() {
               Marine Services &amp; Solutions
             </p>
 
-            <p className="text-sm font-body text-steel-300 leading-relaxed mb-8 max-w-xs">
+            <p className="text-sm font-body text-steel-300 leading-relaxed max-w-xs">
               {BRAND.legalName} — Your trusted marine partner in Egypt
               since {BRAND.founded}.
             </p>
-
-            {/* Social icons */}
-            <div className="flex items-center gap-3">
-              {socialLinks.map(({ Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    'flex items-center justify-center w-9 h-9 rounded border border-steel-700',
-                    'text-steel-400 hover:text-white hover:border-flame-500 hover:bg-flame-500/10',
-                    'transition-all duration-200',
-                  )}
-                >
-                  <Icon size={15} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Col 2 — Quick Links ───────────────────────────────────── */}
