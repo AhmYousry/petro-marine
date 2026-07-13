@@ -18,7 +18,7 @@ const item: Variants = {
 
 const QUICK = [
   { icon: Phone, label: '+20 3 555 0192', href: 'tel:+2035550192' },
-  { icon: Mail,  label: 'info@petromarine.com', href: 'mailto:info@petromarine.com' },
+  { icon: Mail,  label: 'info@petromarine-alex.com', href: 'mailto:info@petromarine-alex.com' },
   { icon: Clock, label: '24/7 Operations', href: undefined },
 ]
 
