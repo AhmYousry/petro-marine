@@ -39,7 +39,6 @@ const SLIDES: Slide[] = [
     ctaSecondary: { label: 'Our Capabilities',  href: ROUTES.ABOUT },
     accentWord:   'Solutions,',
     accentColor:  'text-flame-400',
-    badge:        '120+ Vessels Managed',
   },
   {
     id:           'support',
