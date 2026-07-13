@@ -45,9 +45,11 @@ interface ImageAreaProps {
   gradient:    string
   icon:        React.ComponentType<{ size?: number; strokeWidth?: number; className?: string }>
   serviceNum:  number
+  image?:      string
+  imageAlt?:   string
 }
 
-function ImageArea({ gradient, icon: Icon, serviceNum }: ImageAreaProps) {
+function ImageArea({ gradient, icon: Icon, serviceNum, image, imageAlt }: ImageAreaProps) {
   return (
     <div
       className={cn(
@@ -55,38 +57,62 @@ function ImageArea({ gradient, icon: Icon, serviceNum }: ImageAreaProps) {
         'shadow-[0_28px_80px_-24px_rgba(7,14,30,0.55)]',
       )}
     >
-      {/* Gradient base */}
-      <div className="absolute inset-0" style={{ background: gradient }} />
+      {image ? (
+        <>
+          {/* Photo */}
+          <img
+            src={image}
+            alt={imageAlt ?? ''}
+            width={1250}
+            height={1000}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Bottom scrim for badge legibility */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to top, rgba(7,14,30,0.55), transparent)',
+            }}
+          />
+        </>
+      ) : (
+        <>
+          {/* Gradient base */}
+          <div className="absolute inset-0" style={{ background: gradient }} />
 
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 bg-grid-dark opacity-25" />
+          {/* Subtle grid overlay */}
+          <div className="absolute inset-0 bg-grid-dark opacity-25" />
 
-      {/* Radial glow */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 50% at 50% 35%, rgba(255,255,255,0.10) 0%, transparent 60%)',
-        }}
-      />
+          {/* Radial glow */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(ellipse 60% 50% at 50% 35%, rgba(255,255,255,0.10) 0%, transparent 60%)',
+            }}
+          />
 
-      {/* Diagonal accent line */}
-      <div
-        className="absolute -right-10 top-0 w-px h-full rotate-[18deg] origin-top opacity-60"
-        style={{
-          background:
-            'linear-gradient(to bottom, transparent, rgba(255,255,255,0.4) 50%, transparent)',
-        }}
-      />
+          {/* Diagonal accent line */}
+          <div
+            className="absolute -right-10 top-0 w-px h-full rotate-[18deg] origin-top opacity-60"
+            style={{
+              background:
+                'linear-gradient(to bottom, transparent, rgba(255,255,255,0.4) 50%, transparent)',
+            }}
+          />
 
-      {/* Large center icon */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <Icon
-          size={140}
-          strokeWidth={0.85}
-          className="text-white/15"
-        />
-      </div>
+          {/* Large center icon */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Icon
+              size={140}
+              strokeWidth={0.85}
+              className="text-white/15"
+            />
+          </div>
+        </>
+      )}
 
       {/* Service number badge — bottom-left */}
       <div className="absolute bottom-5 left-5 flex items-center gap-3">
@@ -97,14 +123,16 @@ function ImageArea({ gradient, icon: Icon, serviceNum }: ImageAreaProps) {
         </div>
       </div>
 
-      {/* Corner shimmer */}
-      <div
-        className="absolute top-0 right-0 w-32 h-32 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle at 100% 0%, rgba(255,255,255,0.18) 0%, transparent 65%)',
-        }}
-      />
+      {/* Corner shimmer (placeholder only) */}
+      {!image && (
+        <div
+          className="absolute top-0 right-0 w-32 h-32 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(circle at 100% 0%, rgba(255,255,255,0.18) 0%, transparent 65%)',
+          }}
+        />
+      )}
     </div>
   )
 }
@@ -291,6 +319,8 @@ export function ServiceSection({ service, index }: ServiceSectionProps) {
               gradient={service.imageAccent}
               icon={Icon}
               serviceNum={serviceNum}
+              image={service.image}
+              imageAlt={`${service.title} — Petromarine crew at work`}
             />
           </motion.div>
 

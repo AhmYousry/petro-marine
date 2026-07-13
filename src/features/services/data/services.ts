@@ -18,6 +18,7 @@ export interface ServiceDetail {
   highlights:   string[]            // bullet list, 4–5 items
   capabilities: { label: string; value: string }[]  // 3 stat-style chips
   imageAccent:  string              // CSS gradient string for the image area
+  image?:       string              // photo path; falls back to gradient placeholder
   bg:           'white' | 'smoke'   // alternating background per section
 }
 
@@ -42,6 +43,7 @@ export const SERVICES_DETAIL: ServiceDetail[] = [
       { label: 'Class Approval',  value: '100%' },
     ],
     imageAccent: 'linear-gradient(135deg, #2A5FA5 0%, #1B2B4B 55%, #0D162C 100%)',
+    image:       '/services/marine-supply.jpg',
     bg:          'white',
   },
   {
