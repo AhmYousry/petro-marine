@@ -18,7 +18,7 @@ export const BRAND = {
   legalName:   'Egyptian Cypriot for Marine & Petroleum Services Co. (Petromarine)',
   tagline:     'Marine Services & Solutions',
   description: 'World-class marine services across offshore operations, vessel management, fuel supply, and maritime logistics.',
-  founded:     1987,
+  founded:     1973,
   logoPath:    '/site-logo.png',
 
   contact: {
@@ -83,7 +83,7 @@ export const MOTION = motionTokens
 // ═══════════════════════════════════════════════════════════════════════════════
 
 export const STATS = [
-  { id: 'experience',  value: '25+',  unit: '',    label: 'Years Experience',    description: 'Operating since 1998' },
+  { id: 'experience',  value: '50+',  unit: '',    label: 'Years Experience',    description: 'Operating since 1973' },
   { id: 'vessels',     value: '120+', unit: '',    label: 'Vessels Managed',     description: 'Across global waters'  },
   { id: 'ports',       value: '40',   unit: '',    label: 'Ports Covered',       description: 'Worldwide network'     },
   { id: 'uptime',      value: '99.8', unit: '%',   label: 'Operational Uptime',  description: 'Industry-leading'      },
@@ -109,7 +109,7 @@ export const SERVICE_CATEGORIES = [
 export const SEO = {
   titleTemplate: '%s | Petro Marine',
   defaultTitle:  'Petro Marine — Marine Services & Solutions',
-  description:   'World-class marine services across offshore operations, vessel management, fuel supply, and maritime logistics. Trusted since 1998.',
+  description:   'World-class marine services across offshore operations, vessel management, fuel supply, and maritime logistics. Trusted since 1973.',
   keywords: [
     'marine services', 'offshore support', 'vessel management',
     'maritime logistics', 'fuel supply', 'marine consultancy',

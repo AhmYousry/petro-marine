@@ -54,14 +54,14 @@ const SLIDES: Slide[] = [
   },
   {
     id:           'heritage',
-    eyebrow:      'TRUSTED SINCE 1998',
+    eyebrow:      'TRUSTED SINCE 1973',
     headline:     ['Over 50 Years', 'Serving the Sea'],
     body:         'Setting the gold standard in offshore operations, vessel management, and maritime solutions across global waters — for over five decades.',
     cta:          { label: 'Explore Our Services', href: ROUTES.SERVICES },
     ctaSecondary: { label: 'Our Story',            href: ROUTES.ABOUT },
     accentWord:   'Serving',
     accentColor:  'text-ocean-300',
-    badge:        '25+ Years of Excellence',
+    badge:        '50+ Years of Excellence',
   },
 ]
 
