@@ -1,15 +1,30 @@
+import { useEffect } from 'react'
 import { ContactHero }     from './components/ContactHero'
 import { ContactInfo }     from './components/ContactInfo'
 import { ContactForm }     from './components/ContactForm'
 import { QuoteCTA }        from './components/QuoteCTA'
 
 export function ContactPage() {
+  // Smooth-scroll to hash on initial mount (for direct deep-links)
+  useEffect(() => {
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash)
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
+      }
+    }
+  }, [])
+
   return (
     <>
       <ContactHero />
 
       {/* Main: contact info (left) + form (right) */}
-      <section className="relative bg-white overflow-hidden" aria-label="Contact details and form">
+      <section
+        id="contact-form"
+        className="relative bg-white overflow-hidden scroll-mt-24"
+        aria-label="Contact details and form"
+      >
         {/* Decorative blob */}
         <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
           <div

@@ -286,7 +286,7 @@ export function ServiceSection({ service, index }: ServiceSectionProps) {
             {/* CTA link */}
             <motion.div variants={fadeUp}>
               <Link
-                to={ROUTES.CONTACT}
+                to={`${ROUTES.CONTACT}#contact-form`}
                 className={cn(
                   'group inline-flex items-center gap-2.5',
                   'text-[0.8125rem] font-display font-bold uppercase tracking-[0.12em]',
