@@ -92,3 +92,9 @@ export const RESPONSE_PROMISES = [
   { icon: Anchor, text: 'Coverage at all 12 Egyptian ports' },
   { icon: MapPin, text: 'No third-party hops — direct team' },
 ]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FORMSPREE  (replace with your form ID from https://formspree.io)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const FORMSPREE_FORM_ID = 'xeeyqzvy'

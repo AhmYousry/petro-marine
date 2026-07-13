@@ -2,7 +2,7 @@ import { useState, type FormEvent, type ChangeEvent } from 'react'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import { Send, Check, ChevronDown, AlertCircle, Loader2 } from 'lucide-react'
 import { cn } from '@/utils'
-import { SUBJECT_OPTIONS, RESPONSE_PROMISES } from '../data/contact'
+import { SUBJECT_OPTIONS, RESPONSE_PROMISES, FORMSPREE_FORM_ID } from '../data/contact'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // TYPES
@@ -17,7 +17,7 @@ interface FormState {
 }
 
 type Errors = Partial<Record<keyof FormState, string>>
-type Status = 'idle' | 'submitting' | 'success'
+type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 const EMPTY: FormState = { name: '', email: '', phone: '', subject: '', message: '' }
 
@@ -100,6 +100,7 @@ export function ContactForm() {
   const [errors, setErrors]   = useState<Errors>({})
   const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({})
   const [status, setStatus]   = useState<Status>('idle')
+  const [submitError, setSubmitError] = useState('')
 
   const update = (field: keyof FormState) =>
     (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -125,9 +126,25 @@ export function ContactForm() {
       return
     }
     setStatus('submitting')
-    // Simulate async submission (no backend wired yet)
-    await new Promise((r) => setTimeout(r, 1100))
-    setStatus('success')
+    setSubmitError('')
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:    values.name,
+          email:   values.email,
+          phone:   values.phone,
+          subject: values.subject,
+          message: values.message,
+        }),
+      })
+      if (!res.ok) throw new Error('Submission failed')
+      setStatus('success')
+    } catch {
+      setStatus('error')
+      setSubmitError('Something went wrong. Please try again or call our 24/7 line.')
+    }
   }
 
   const reset = () => {
@@ -135,6 +152,7 @@ export function ContactForm() {
     setErrors({})
     setTouched({})
     setStatus('idle')
+    setSubmitError('')
   }
 
   return (
@@ -205,6 +223,21 @@ export function ContactForm() {
                 Fill in the form and we&rsquo;ll get back to you within one business day.
               </p>
             </div>
+
+            {/* Submit error banner */}
+            <AnimatePresence>
+              {status === 'error' && submitError && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="flex items-center gap-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-[0.875rem] text-red-700 font-body"
+                >
+                  <AlertCircle size={16} strokeWidth={2} className="flex-shrink-0" />
+                  <span>{submitError}</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Name + Phone row */}
             <div className="grid sm:grid-cols-2 gap-5">
