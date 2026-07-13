@@ -66,6 +66,7 @@ export const SERVICES_DETAIL: ServiceDetail[] = [
       { label: 'Order Lead Time',  value: '24 hrs' },
     ],
     imageAccent: 'linear-gradient(135deg, #E8520A 0%, #9C3608 55%, #1B2B4B 100%)',
+    image:       '/services/provisions.jpg',
     bg:          'smoke',
   },
   {
