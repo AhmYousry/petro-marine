@@ -181,6 +181,7 @@ export const SERVICES_DETAIL: ServiceDetail[] = [
       { label: 'Certificate Issue', value: 'Same-Day' },
     ],
     imageAccent: 'linear-gradient(135deg, #F7A81A 0%, #C13D06 55%, #1B2B4B 100%)',
+    image:       '/services/inspection.jpg',
     bg:          'white',
   },
 ]
