@@ -19,7 +19,7 @@ const EASE_OUT_EXPO   = [0.19, 1.00, 0.22, 1.00] as [number, number, number, num
 
 interface Slide {
   id:           string
-  eyebrow:      string
+  eyebrow?:     string
   headline:     string[]
   body:         string
   cta:          { label: string; href: string }
@@ -32,7 +32,6 @@ interface Slide {
 const SLIDES: Slide[] = [
   {
     id:           'solutions',
-    eyebrow:      'FULL-SERVICE CAPABILITY',
     headline:     ['Complete Marine', 'Solutions,', 'One Partner'],
     body:         'From offshore support to fuel supply, technical maintenance to strategic consultancy — every maritime requirement served with precision under one roof.',
     cta:          { label: 'View All Services', href: ROUTES.SERVICES },
@@ -344,11 +343,13 @@ export function HeroSection() {
                 )}
 
                 {/* ── Eyebrow ───────────────────────────────────────── */}
-                <motion.div variants={itemVariants} className="mb-4 md:mb-5">
-                  <span className="font-display font-semibold uppercase text-white/55 tracking-[0.18em] text-[0.6875rem] md:text-[0.75rem]">
-                    {slide.eyebrow}
-                  </span>
-                </motion.div>
+                {slide.eyebrow && (
+                  <motion.div variants={itemVariants} className="mb-4 md:mb-5">
+                    <span className="font-display font-semibold uppercase text-white/55 tracking-[0.18em] text-[0.6875rem] md:text-[0.75rem]">
+                      {slide.eyebrow}
+                    </span>
+                  </motion.div>
+                )}
 
                 {/* ── Headline ──────────────────────────────────────── */}
                 <motion.h1
