@@ -2,7 +2,7 @@ import { useState, type FormEvent, type ChangeEvent } from 'react'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import { Send, Check, ChevronDown, AlertCircle, Loader2 } from 'lucide-react'
 import { cn } from '@/utils'
-import { SUBJECT_OPTIONS, RESPONSE_PROMISES, FORMSPREE_FORM_ID } from '../data/contact'
+import { SUBJECT_OPTIONS, RESPONSE_PROMISES } from '../data/contact'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // TYPES
@@ -128,7 +128,7 @@ export function ContactForm() {
     setStatus('submitting')
     setSubmitError('')
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+      const res = await fetch('/api/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -139,11 +139,14 @@ export function ContactForm() {
           message: values.message,
         }),
       })
-      if (!res.ok) throw new Error('Submission failed')
+      const data = await res.json()
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Submission failed')
+      }
       setStatus('success')
-    } catch {
+    } catch (err) {
       setStatus('error')
-      setSubmitError('Something went wrong. Please try again or call our 24/7 line.')
+      setSubmitError(err instanceof Error ? err.message : 'Something went wrong. Please try again or call our 24/7 line.')
     }
   }
 
