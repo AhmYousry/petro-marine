@@ -158,6 +158,7 @@ export const SERVICES_DETAIL: ServiceDetail[] = [
       { label: 'Response',          value: '24/7' },
     ],
     imageAccent: 'linear-gradient(135deg, #C13D06 0%, #2A3A5A 55%, #0D162C 100%)',
+    image:       '/services/repair.jpg',
     bg:          'smoke',
   },
   {
