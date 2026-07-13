@@ -135,6 +135,7 @@ export const SERVICES_DETAIL: ServiceDetail[] = [
       { label: 'Treatment Spec',  value: '< 15 ppm' },
     ],
     imageAccent: 'linear-gradient(135deg, #8A9BB5 0%, #2A3A5A 55%, #0D162C 100%)',
+    image:       '/services/sludge.jpg',
     bg:          'white',
   },
   {
