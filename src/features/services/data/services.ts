@@ -89,6 +89,7 @@ export const SERVICES_DETAIL: ServiceDetail[] = [
       { label: 'Port Coverage',  value: '12 Ports' },
     ],
     imageAccent: 'linear-gradient(135deg, #0EA5E9 0%, #1F4880 55%, #0D162C 100%)',
+    image:       '/services/fresh-water.jpg',
     bg:          'white',
   },
   {
